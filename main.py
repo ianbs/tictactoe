@@ -97,9 +97,8 @@ if __name__ == "__main__":
       #Evento de click com o mouse em uma celula
       if event.type == pygame.MOUSEBUTTONDOWN:
         if which_cell_click() in moves:
-          print('Ja fui clicado antes')        
+          print('x')        
         else:
-          print('Fui clicado', which_cell_click())
           if len(moves)%2 == 0:
             draw_circle()
             moves_o.append(which_cell_click())
@@ -109,13 +108,9 @@ if __name__ == "__main__":
           moves.append(which_cell_click()) #Adiciona a celula ao array de movimentos feitos
         moves_o.sort()
         moves_x.sort()
-        print("O: ", moves_o)
-        print("X: ", moves_x)
         if padroes_vence.count(moves_o):
-          print("O venceu")
           print_winner("O venceu!Pressione R para reiniciar!")
         elif padroes_vence.count(moves_x):
-          print("X venceu")
           print_winner("X venceu!Pressione R para reiniciar!")
       if pygame.key.get_pressed()[pygame.K_r]:
           draw_cells()
