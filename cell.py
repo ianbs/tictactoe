@@ -22,11 +22,3 @@ class Cell:
       self.clicked = True
       return True
    
-  def get_center(self):
-    x = self.body.centerx
-    y = self.body.centery
-    if x == 200:
-      x = 150
-    if y == 200:
-      y = 150
-    return [x, y]
