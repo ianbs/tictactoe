@@ -2,11 +2,13 @@
 # -*- coding: utf-8 -*-
 
 # Importação das bibliotecas
+from src.cell import Cell
 import pygame
 import os
+pygame.init()  # Inicia o PyGame
+clock = pygame.time.Clock()
 
 # Importação das Classes
-from cell import Cell
 
 # VARIAVEIS GLOBAIS
 cells = []  # Array com as celulas da matriz do jogo
@@ -29,18 +31,18 @@ positions = [
     (200, 200, 300, 300),  # 9 celula
 ]
 
-padroes_vence = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [
-    0, 3, 6], [1, 4, 7], [2, 6, 8], [0, 4, 8], [2, 4, 6]]
+padroes_vence = [[0, 1, 2], [3, 4, 5], [6, 7, 8],
+                 [0, 3, 6], [1, 4, 7], [2, 6, 8],
+                 [0, 4, 8], [2, 4, 6]]
 
 # Configurações iniciais do jogo
 os.environ["SDL_VIDEO_CENTERED"] = "1"  # Inicializa a janela no centro
-pygame.init()  # Inicia o PyGame
+
 # Define as configurações da janela
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("Jogo da Velha")  # Define o titulo da janela
 game_surf = pygame.Surface((300, 300))
 done = False  # Variavel para o programa rodar em loop infinito
-clock = pygame.time.Clock()
 
 # Função que desenha as celulas e as linhas que as dividem
 
